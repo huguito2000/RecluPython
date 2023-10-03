@@ -10,6 +10,7 @@ import os
 
 
 contador: int = 0
+
 global driver
 options = Options()
 options.add_argument("start-maximized")
