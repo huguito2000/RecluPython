@@ -1,7 +1,5 @@
-from test.Login import login, home, menu, ajustes
+from test.Login import login
 
 if __name__ == '__main__':
     login()
-    menu()
-    home()
-    ajustes()
+
