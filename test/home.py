@@ -1,15 +1,9 @@
-from selenium import webdriver
-from selenium.webdriver.chrome.options import Options
-from selenium.webdriver.chrome.service import Service
+from test.Login import login, driver
 from selenium.webdriver.common.by import By
-import webdriver_manager.chrome
-from selenium.webdriver.common import keys
 import time
-from objetos.Obj_login import email, password, BtnContinuar
 from objetos.Obj_home import clientes, pausada, borrador, cerradas, activas, vacantes, Btnperfil, configuracion, nombre, \
     apaterno, amaterno, subir, img_path, creditos, equipo, historial, tutorial, chat, Ajustes, eliminar, cancelar, \
     eliminar2
-from test.Login import driver,login
 
 def home():
 
@@ -83,7 +77,7 @@ def perfil():
     time.sleep(1)
 
 def ajustes():
-    perfil()
+
     CampoNombres = driver.find_element(By.XPATH, nombre)
     CampoNombres.clear()
     CampoNombres.send_keys('huguito')
@@ -121,4 +115,7 @@ home()
 
 menu()
 
+perfil()
+
 ajustes()
+

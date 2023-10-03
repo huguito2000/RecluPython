@@ -1,8 +1,6 @@
-from selenium import webdriver
-from selenium.webdriver.chrome.options import Options
-from selenium.webdriver.chrome.service import Service
+from objetos import browser
+from objetos.browser import driver
 from selenium.webdriver.common.by import By
-import webdriver_manager.chrome
 from datetime import datetime
 import time
 from objetos.Obj_login import email, password, BtnContinuar, mostrar, ocultar
@@ -11,11 +9,7 @@ import os
 
 contador: int = 0
 
-global driver
-options = Options()
-options.add_argument("start-maximized")
-driver = webdriver.Chrome(service=Service(webdriver_manager.chrome.ChromeDriverManager().install()), options=options)
-driver.get("https://involveprereclu.involverh.com.mx/login")
+browser
 
 def captura():
     global contador

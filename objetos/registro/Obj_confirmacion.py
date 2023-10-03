@@ -1,0 +1,8 @@
+code = '/html/body/app-root/app-code-activate-account/div/div/div/div/div[3]/div[3]/p'
+token = '/html/body/app-root/app-code-activate-account/div/div/div/div/div[3]/div[4]/p'
+newCode = '/html/body/app-root/app-code-activate-account/div/div/div/div/div[3]/div[2]/div[2]/button'
+code1 = '/html/body/app-root/app-code-activate-account/div/div/div/div/div[3]/div[1]/code-input/span[1]/input'
+code2 = '/html/body/app-root/app-code-activate-account/div/div/div/div/div[3]/div[1]/code-input/span[2]/input'
+code3 = '/html/body/app-root/app-code-activate-account/div/div/div/div/div[3]/div[1]/code-input/span[3]/input'
+code4 = '/html/body/app-root/app-code-activate-account/div/div/div/div/div[3]/div[1]/code-input/span[4]/input'
+continuar = '/html/body/app-root/app-code-activate-account/div/div/div/div/div[3]/div[2]/div[1]/button'
