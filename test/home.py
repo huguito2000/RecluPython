@@ -1,4 +1,5 @@
-from test.Login import login, driver
+from test import Login
+from objetos.browser import driver
 from selenium.webdriver.common.by import By
 import time
 from objetos.Obj_home import clientes, pausada, borrador, cerradas, activas, vacantes, Btnperfil, configuracion, nombre, \
@@ -6,7 +7,6 @@ from objetos.Obj_home import clientes, pausada, borrador, cerradas, activas, vac
     eliminar2
 
 def home():
-
     Btnhome = driver.find_element(By.XPATH, pausada)
     Btnhome.click()
     time.sleep(1)
@@ -92,7 +92,7 @@ def ajustes():
     time.sleep(1)
     img_upload = driver.find_element(By.XPATH, subir)
     img_upload.send_keys(img_path)
-    time.sleep(3)
+    time.sleep(5)
     img_upload = driver.find_element(By.XPATH, eliminar)
     img_upload.click()
     time.sleep(3)
@@ -109,13 +109,16 @@ def ajustes():
     img_upload.send_keys(img_path)
     time.sleep(3)
 
-login()
+Login
 
 home()
-
 menu()
-
 perfil()
-
 ajustes()
+
+
+
+
+
+
 
