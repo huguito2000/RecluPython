@@ -1,10 +1,6 @@
 from objetos import browser
 from objetos.browser import driver
-from selenium import webdriver
-from selenium.webdriver.chrome.options import Options
-from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.common.by import By
-import webdriver_manager.chrome
 from datetime import datetime
 import time
 import os
@@ -39,7 +35,7 @@ def captura():
     print(captura_ruta)
     contador += 1
 
-"""
+
 time.sleep(2)
 CrearCuenta = driver.find_element(By.XPATH, crearCuenta)
 CrearCuenta.click()
@@ -227,7 +223,7 @@ CrearCuenta.click()
 captura()
 time.sleep(3)
 print("ya se hizo el registro")
-"""
+
 
 def registroValido():
     global correo
@@ -290,8 +286,6 @@ def registroValido():
     captura()
     time.sleep(3)
     print("ya se hizo el registro")
-
-registroValido()
 
 
 time.sleep(1)
