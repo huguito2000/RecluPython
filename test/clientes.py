@@ -2,7 +2,6 @@ from selenium.webdriver.common.by import By
 from datetime import datetime
 import time
 import os
-
 from objetos.Obj_home import vacantes
 from objetos.browser import driver
 from test.Login import loginValido

@@ -1,4 +1,4 @@
-from test import Login
+from test.Login import loginValido
 from objetos.browser import driver
 from selenium.webdriver.common.by import By
 import time
@@ -109,7 +109,7 @@ def ajustes():
     img_upload.send_keys(img_path)
     time.sleep(3)
 
-Login
+loginValido()
 
 home()
 menu()
