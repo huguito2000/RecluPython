@@ -9,7 +9,7 @@ pipeline {
         }
         stage('Run Selenium Tests') {
             steps {
-                sh 'pytest --junitxml=pytest_report.xml main.py'
+                sh 'python3 main.py'
             }
         }
     }
