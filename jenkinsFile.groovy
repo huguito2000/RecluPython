@@ -9,7 +9,7 @@ pipeline {
         }
         stage('Run Selenium Tests') {
             steps {
-                sh 'python3 test_selenium.py'
+                sh 'python3 main.py'
             }
         }
     }
