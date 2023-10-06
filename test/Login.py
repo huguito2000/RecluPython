@@ -90,7 +90,7 @@ def loginValido():
     time.sleep(1)
     BtnLogin = driver.find_element(By.XPATH, BtnContinuar)
     BtnLogin.click()
-    time.sleep(10)
+    time.sleep(5)
     captura()
     print("ya se inicio session")
 

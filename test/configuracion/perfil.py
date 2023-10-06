@@ -2,11 +2,13 @@ import datetime
 import os
 import time
 from selenium.webdriver.common.by import By
-from objetos.configuracion.Obj_perfil import Ajustes, nombre, apaterno, amaterno, img_path, subir, eliminar, cancelar, \
-    eliminar2, cambiarPass, passAnterior, newPass, confirmarPassword, cambiarPassword, mostrarPass1, mostrarPass2, mostrarPass3
 from test.Login import loginValido
 from objetos.browser import driver
 from datetime import datetime
+from objetos.configuracion.Obj_perfil import Ajustes, nombre, apaterno, amaterno, img_path, subir, eliminar, cancelar, \
+    eliminar2, cambiarPass, passAnterior, newPass, confirmarPassword, cambiarPassword, mostrarPass1, mostrarPass2, \
+    mostrarPass3, telefonoCambio, newTelefono, cancelarTelefono, cambiarTelefono, cambiarEmail, newEmail, newEmail2, \
+    passEmail, cancelarEmail, continuarEmail, mostrarEmail
 
 contador: int = 0
 password ='abcd.1234'
@@ -15,7 +17,7 @@ password ='abcd.1234'
 def captura():
     global contador
     now = datetime.now()
-    carpeta = '/Users/huguito/PycharmProjects/pythonProject/pythonProject/Reclutador/imagenes/perfil/' + str(
+    carpeta = '/Users/huguito/PycharmProjects/pythonProject/pythonProject/Reclutador/imagenes/configuracion/perfil/' + str(
         now.day) + str(now.month)
     os.makedirs(carpeta, exist_ok=True)
     nombre = str(now.day) + str(now.month) + str(contador)
@@ -137,8 +139,99 @@ captura()
 
 loginValido()
 
+
 captura()
+perfil = driver.find_element(By.XPATH, Ajustes)
+perfil.click()
+captura()
+time.sleep(3)
+
+perfil = driver.find_element(By.XPATH, telefonoCambio)
+perfil.click()
+captura()
+time.sleep(3)
+
+perfil = driver.find_element(By.XPATH, cancelarTelefono)
+perfil.click()
+captura()
+time.sleep(3)
+
+perfil = driver.find_element(By.XPATH, telefonoCambio)
+perfil.click()
+captura()
+time.sleep(3)
+
+perfil = driver.find_element(By.XPATH, newTelefono)
+perfil.clear()
+perfil.send_keys('5569777077')
+captura()
+time.sleep(1)
+
+perfil = driver.find_element(By.XPATH, cambiarTelefono)
+perfil.click()
+captura()
+time.sleep(3)
 
 
+perfil = driver.find_element(By.XPATH, cambiarEmail)
+perfil.click()
+captura()
+time.sleep(3)
 
+perfil = driver.find_element(By.XPATH, cancelarEmail)
+perfil.click()
+captura()
+time.sleep(3)
+
+perfil = driver.find_element(By.XPATH, cambiarEmail)
+perfil.click()
+captura()
+time.sleep(3)
+
+perfil = driver.find_element(By.XPATH, newEmail)
+perfil.clear()
+perfil.send_keys('hugo')
+captura()
+time.sleep(1)
+perfil.clear()
+perfil.send_keys('hugoreclutador@yopmail.com')
+captura()
+time.sleep(3)
+
+perfil = driver.find_element(By.XPATH, newEmail2)
+perfil.clear()
+perfil.send_keys('hugo')
+captura()
+time.sleep(1)
+perfil.clear()
+perfil.send_keys('hugoreclutador@yopmail.com')
+captura()
+time.sleep(3)
+
+perfil = driver.find_element(By.XPATH, passEmail)
+perfil.clear()
+perfil.send_keys('abcd.1234')
+captura()
+time.sleep(1)
+
+perfil = driver.find_element(By.XPATH, mostrarEmail)
+perfil.click()
+captura()
+time.sleep(3)
+
+perfil = driver.find_element(By.XPATH, continuarEmail)
+perfil.click()
+captura()
+time.sleep(3)
+
+perfil = driver.find_element(By.XPATH, passEmail)
+perfil.clear()
+perfil.send_keys('Abcd.1234')
+captura()
+time.sleep(3)
+
+perfil = driver.find_element(By.XPATH, continuarEmail)
+perfil.click()
+captura()
+time.sleep(3)
 

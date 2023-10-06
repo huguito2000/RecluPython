@@ -1,5 +1,5 @@
-from test.Login import login
+from test.Login import loginValido
 
 if __name__ == '__main__':
-    login()
+    loginValido()
 
