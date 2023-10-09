@@ -35,6 +35,13 @@ def text_elemento(xpath, valor, segundos = 1):
     CampoNombres.send_keys(valor)
     captura_time(segundos)
 
+def cambio_imagen(xpath, valor, segundos = 2):
+    perfil = driver.find_element(By.XPATH, xpath)
+    perfil.send_keys(valor)
+    time.sleep(segundos)
+    captura_time(segundos)
+
+
 def pasa_home():
     try:
         click_elemento(pausada, 1)
@@ -80,27 +87,17 @@ def perfil():
 
 def ajustes():
     try:
-        '''
         text_elemento(nombre, 'huguito', 1)
         text_elemento(apaterno, 'rodriguez', 1)
         text_elemento(amaterno, 'olivera', 1)
-        '''
-        time.sleep(2)
-        perfil = driver.find_element(By.XPATH, subir)
-        perfil.send_keys(img_path)
-        captura()
-        driver.refresh()
-        time.sleep(5)
-        print("se encontro")
-        perfil.send_keys(img_path)
+        cambio_imagen(subir,img_path, 3)
 
-        text_elemento(subir, img_path, 5)
         click_elemento(eliminar,3)
         click_elemento(cancelar, 3)
         click_elemento(eliminar, 3)
         click_elemento(eliminar2, 3)
-
         text_elemento(subir, img_path, 5)
+        cambio_imagen(subir, img_path, 3)
         
         print("ya pasaron los ajustes")
         return "ya pasaron los ajustes"
@@ -109,11 +106,10 @@ def ajustes():
         return "Fallo los ajustes"
 
 
-loginValido()
-perfil()
-ajustes()
+
 
 '''
+loginValido()
 pasa_home()
 print("pase el home")
 menu()
