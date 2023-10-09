@@ -23,8 +23,10 @@ def captura():
     driver.save_screenshot(captura_ruta)
     print(captura_ruta)
     contador += 1
+def captura_time(segundos):
+    time.sleep(segundos)
+    captura()
 
-captura()
 
 loginValido()
 
