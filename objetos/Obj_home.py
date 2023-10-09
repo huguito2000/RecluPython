@@ -30,7 +30,7 @@ def foto():
 
 foto()
 subir = '//*[@id="configurator-input-file-upload"]'
-img_path =('/Users/huguito/PycharmProjects/pythonProject/pythonProject/Reclutador/Archivos/' + str(imagen) +'.jpeg')
+img_path =('Reclutador/Archivos/' + str(imagen) +'.jpeg')
 eliminar = '/html/body/app-root/app-dashboard/div/app-configuration-dashboard/div/div/div/div[2]/div/app-configuration-profile/div/div/div[1]/div/div/div/div/div/div[2]/div/div/span[2]'
 cancelar = '/html/body/ngb-modal-window/div/div/div/div[3]/div[1]/button'
 eliminar2 = '/html/body/ngb-modal-window/div/div/div/div[3]/div[2]/button'

@@ -1,3 +1,5 @@
+import os
+from datetime import datetime
 from test.Login import loginValido
 from objetos.browser import driver
 from selenium.webdriver.common.by import By
@@ -6,116 +8,121 @@ from objetos.Obj_home import clientes, pausada, borrador, cerradas, activas, vac
     apaterno, amaterno, subir, img_path, creditos, equipo, historial, tutorial, chat, Ajustes, eliminar, cancelar, \
     eliminar2
 
-def home():
-    Btnhome = driver.find_element(By.XPATH, pausada)
-    Btnhome.click()
-    time.sleep(1)
+contador = 0
+def captura():
+    global contador
+    now = datetime.now()
+    carpeta = 'imagenes/home/' + str(now.day) + str(now.month)
+    os.makedirs(carpeta, exist_ok=True)
+    nombre = str(now.day) + str(now.month) + str(contador)
+    captura_ruta = carpeta + '/' + nombre + '.png'
+    driver.save_screenshot(captura_ruta)
+    print(captura_ruta)
+    contador += 1
 
-    Btnhome = driver.find_element(By.XPATH,borrador)
-    Btnhome.click()
-    time.sleep(1)
+def captura_time(segundos):
+    time.sleep(segundos)
+    captura()
 
-    Btnhome = driver.find_element(By.XPATH, cerradas)
+def click_elemento(xpath, segundos = 1):
+    Btnhome = driver.find_element(By.XPATH, xpath)
     Btnhome.click()
-    time.sleep(2)
+    captura_time(segundos)
 
-    Btnhome = driver.find_element(By.XPATH, activas)
-    Btnhome.click()
-    time.sleep(2)
+def text_elemento(xpath, valor, segundos = 1):
+    CampoNombres = driver.find_element(By.XPATH, xpath)
+    CampoNombres.clear()
+    CampoNombres.send_keys(valor)
+    captura_time(segundos)
+
+def pasa_home():
+    try:
+        click_elemento(pausada, 1)
+        click_elemento(borrador, 1)
+        click_elemento(cerradas, 1)
+        click_elemento(activas, 2)
+        print("paso el home")
+        return ("paso el home exitosamente")
+    except Exception as e:
+        print("Error en el home:", str(e))
+        return "Fallo el home"
 def menu():
-    menu = driver.find_element(By.XPATH, creditos)
-    menu.click()
-    time.sleep(3)
-
-    menu = driver.find_element(By.XPATH, vacantes)
-    menu.click()
-    time.sleep(3)
-
-    menu = driver.find_element(By.XPATH, equipo)
-    menu.click()
-    time.sleep(3)
-
-    menu = driver.find_element(By.XPATH, clientes)
-    menu.click()
-    time.sleep(3)
-
-    menu = driver.find_element(By.XPATH, historial)
-    menu.click()
-    time.sleep(3)
-
-    menu = driver.find_element(By.XPATH, chat)
-    menu.click()
-    time.sleep(3)
-
-    menu = driver.find_element(By.XPATH, chat)
-    menu.click()
-    time.sleep(3)
-
-    menu = driver.find_element(By.XPATH, Ajustes)
-    menu.click()
-    time.sleep(3)
-
-    menu = driver.find_element(By.XPATH, tutorial)
-    menu.click()
-    time.sleep(3)
-    driver.switch_to.window(driver.window_handles[0])
-    time.sleep(5)
-
-    menu = driver.find_element(By.XPATH, vacantes)
-    menu.click()
-    time.sleep(3)
-
-    print("ya pase a la pestaña principal")
+    try:
+        click_elemento(creditos, 3)
+        click_elemento(vacantes, 3)
+        click_elemento(equipo, 3)
+        click_elemento(clientes, 3)
+        click_elemento(historial, 3)
+        click_elemento(chat, 3)
+        click_elemento(chat, 3)
+        click_elemento(Ajustes, 3)
+        click_elemento(tutorial, 3)
+        driver.switch_to.window(driver.window_handles[0])
+        time.sleep(5)
+        click_elemento(vacantes, 3)
+        print("ya regrese a la pestaña principal")
+        print("paso el menu")
+        return ("paso el menu exitosamente")
+    except Exception as e:
+        print("Error al pasar el menu", str(e))
+        return "Fallo el menu"
 
 def perfil():
-    BtnClientes = driver.find_element(By.XPATH, Btnperfil)
-    BtnClientes.click()
-    time.sleep(1)
+    try:
+        click_elemento(Btnperfil, 1)
+        click_elemento(configuracion, 1)
+        print("paso el perfil")
+        return "paso el perfil"
+    except Exception as e:
+        print("Error al pasar el perfil", str(e))
+        return "Fallo el perfil"
 
-    BtnClientes = driver.find_element(By.XPATH, configuracion)
-    BtnClientes.click()
-    time.sleep(1)
 
 def ajustes():
+    try:
+        '''
+        text_elemento(nombre, 'huguito', 1)
+        text_elemento(apaterno, 'rodriguez', 1)
+        text_elemento(amaterno, 'olivera', 1)
+        '''
+        time.sleep(2)
+        perfil = driver.find_element(By.XPATH, subir)
+        perfil.send_keys(img_path)
+        captura()
+        driver.refresh()
+        time.sleep(5)
+        print("se encontro")
+        perfil.send_keys(img_path)
 
-    CampoNombres = driver.find_element(By.XPATH, nombre)
-    CampoNombres.clear()
-    CampoNombres.send_keys('huguito')
-    time.sleep(1)
-    CampoNombres = driver.find_element(By.XPATH, apaterno)
-    CampoNombres.clear()
-    CampoNombres.send_keys('rodriguez')
-    time.sleep(1)
-    CampoNombres = driver.find_element(By.XPATH, amaterno)
-    CampoNombres.clear()
-    CampoNombres.send_keys('olivera')
-    time.sleep(1)
-    img_upload = driver.find_element(By.XPATH, subir)
-    img_upload.send_keys(img_path)
-    time.sleep(5)
-    img_upload = driver.find_element(By.XPATH, eliminar)
-    img_upload.click()
-    time.sleep(3)
-    img_upload = driver.find_element(By.XPATH, cancelar)
-    img_upload.click()
-    time.sleep(3)
-    img_upload = driver.find_element(By.XPATH, eliminar)
-    img_upload.click()
-    time.sleep(3)
-    img_upload = driver.find_element(By.XPATH, eliminar2)
-    img_upload.click()
-    time.sleep(3)
-    img_upload = driver.find_element(By.XPATH, subir)
-    img_upload.send_keys(img_path)
-    time.sleep(3)
+        text_elemento(subir, img_path, 5)
+        click_elemento(eliminar,3)
+        click_elemento(cancelar, 3)
+        click_elemento(eliminar, 3)
+        click_elemento(eliminar2, 3)
+
+        text_elemento(subir, img_path, 5)
+        
+        print("ya pasaron los ajustes")
+        return "ya pasaron los ajustes"
+    except Exception as e:
+        print("Error al pasar los ajustes", str(e))
+        return "Fallo los ajustes"
+
 
 loginValido()
-
-home()
-menu()
 perfil()
 ajustes()
 
+'''
+pasa_home()
+print("pase el home")
+menu()
+print("pase el menu")
+perfil()
+print("pase el perfil")
+ajustes()
+print("pase los ajustes")
+'''
 
 
 

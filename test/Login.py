@@ -1,100 +1,84 @@
 from selenium.webdriver.common.by import By
 from datetime import datetime
 import time
-from objetos.Obj_login import email, password, BtnContinuar, mostrar, ocultar
 import os
-from objetos import browser
+from objetos.Obj_login import email, password, BtnContinuar, mostrar, ocultar
 from objetos.browser import driver
-"""
-from selenium import webdriver
-from selenium.webdriver.chrome.options import Options
-from selenium.webdriver.chrome.service import Service
-import webdriver_manager.chrome
-global driver
 
-options = Options()
-options.add_argument("start-maximized")
-driver = webdriver.Chrome(service=Service(webdriver_manager.chrome.ChromeDriverManager().install()), options=options)
-driver.get("https://involveprereclu.involverh.com.mx/login")
-"""
+contador = 0
 
-browser
-
-contador: int = 0
 def captura():
     global contador
     now = datetime.now()
-    carpeta = '/Users/huguito/PycharmProjects/pythonProject/pythonProject/Reclutador/imagenes/login/' + str(
-        now.day) + str(now.month)
+    carpeta = 'imagenes/login/' + str(now.day) + str(now.month)
     os.makedirs(carpeta, exist_ok=True)
     nombre = str(now.day) + str(now.month) + str(contador)
     captura_ruta = carpeta + '/' + nombre + '.png'
     driver.save_screenshot(captura_ruta)
     print(captura_ruta)
     contador += 1
+
+
+def captura_time(segundos):
+    time.sleep(segundos)
+    captura()
+
+def interactuar_con_campo(campo_xpath, valor, segundos=1):
+    campo = driver.find_element(By.XPATH, campo_xpath)
+    campo.send_keys(valor)
+    captura_time(segundos)
+
+def borrarText(xpath):
+    campo = driver.find_element(By.XPATH, xpath)
+    campo.clear()
+
+def hacer_clic_en_elemento(elemento_xpath, segundos=1):
+    elemento = driver.find_element(By.XPATH, elemento_xpath)
+    elemento.click()
+    captura_time(segundos)
+
+
 def loginPrueba():
-    campo_email = driver.find_element(By.XPATH, email)
-    campo_email.send_keys('hug')
-    captura()
-    time.sleep(1)
-    campo_email.clear()
-    campo_email.send_keys('huguitoyopmail.com')
-    captura()
-    time.sleep(1)
-    campo_email.clear()
-    campo_email.send_keys('huguito.reclutador@yopmail.com')
-    captura()
-    time.sleep(1)
-    campo_password = driver.find_element(By.XPATH, password)
-    campo_password.send_keys('abcd.1234')
-    captura()
-    time.sleep(1)
-    Mostrar = driver.find_element(By.XPATH, mostrar)
-    Mostrar.click()
-    captura()
-    time.sleep(1)
-    Ocultar = driver.find_element(By.XPATH, ocultar)
-    Ocultar.click()
-    time.sleep(1)
-    captura()
-    BtnLogin = driver.find_element(By.XPATH, BtnContinuar)
-    BtnLogin.click()
-    captura()
-    time.sleep(3)
-    campo_password = driver.find_element(By.XPATH, password)
-    campo_password.clear()
-    campo_password.send_keys('Abcd.1234')
-    captura()
-    time.sleep(1)
-    Mostrar = driver.find_element(By.XPATH, mostrar)
-    Mostrar.click()
-    captura()
-    time.sleep(1)
-    Ocultar = driver.find_element(By.XPATH, ocultar)
-    Ocultar.click()
-    captura()
-    time.sleep(1)
-    BtnLogin = driver.find_element(By.XPATH, BtnContinuar)
-    BtnLogin.click()
-    time.sleep(10)
-    captura()
-    print("ya se inicio sesion")
+    try:
+        interactuar_con_campo(email, 'hug', 1)
+        borrarText(email)
+        interactuar_con_campo(email, 'huguitoyopmail.com', 1)
+        borrarText(email)
+        interactuar_con_campo(email, 'huguito.reclutador@yopmail.com', 1)
+
+        borrarText(email)
+
+        interactuar_con_campo(password, 'abcd.1234', 1)
+        hacer_clic_en_elemento(mostrar, 1)
+        hacer_clic_en_elemento(ocultar, 1)
+        borrarText(email)
+
+        hacer_clic_en_elemento(BtnContinuar, 3)
+
+        interactuar_con_campo(password, 'Abcd.1234', 1)
+        hacer_clic_en_elemento(mostrar, 1)
+        hacer_clic_en_elemento(ocultar, 1)
+
+        hacer_clic_en_elemento(BtnContinuar, 10)
+
+        print("Inicio de sesión exitoso")
+        return "Inicio de sesión exitoso"
+    except Exception as e:
+        print("Error al iniciar sesión:", str(e))
+        return "Fallo"
+
 
 def loginValido():
-    campo_email = driver.find_element(By.XPATH, email)
-    campo_email.send_keys('huguito.reclutador@yopmail.com')
-    campo_password = driver.find_element(By.XPATH, password)
-    campo_password.clear()
-    campo_password.send_keys('Abcd.1234')
-    captura()
-    time.sleep(1)
-    BtnLogin = driver.find_element(By.XPATH, BtnContinuar)
-    BtnLogin.click()
-    time.sleep(5)
-    captura()
-    print("ya se inicio session")
-
-
+    try:
+        interactuar_con_campo(email, 'huguito.reclutador@yopmail.com', 1)
+        interactuar_con_campo(password, 'Abcd.1234', 1)
+        hacer_clic_en_elemento(BtnContinuar, 5)
+        captura_time(2)
+        print("Inicio de sesión exitoso")
+        return "Inicio de sesión exitoso"
+    except Exception as e:
+        print("Error al iniciar sesión:", str(e))
+        return "Fallo"
 
 
 

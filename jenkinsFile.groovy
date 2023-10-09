@@ -4,27 +4,13 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                // Puedes realizar la descarga de tu código fuente aquí si es necesario.
+                checkout scm
             }
         }
-
-        stage('Ejecutar Pruebas') {
+        stage('Run Selenium Tests') {
             steps {
                 sh 'python3 main.py'
             }
-        }
-
-        stage('Generar Reporte') {
-            steps {
-                sh 'allure generate -c -o allure-results'
-            }
-        }
-    }
-
-    post {
-        always {
-            archiveArtifacts 'allure-results'
-            allure([includeProperties: false, jdk: '', properties: [], reportBuildPolicy: 'ALWAYS', results: [[path: 'allure-results']]])
         }
     }
 }
