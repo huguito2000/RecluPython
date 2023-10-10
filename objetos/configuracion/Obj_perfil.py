@@ -1,14 +1,16 @@
-from objetos.Obj_home import Ajustes, nombre, apaterno, amaterno, foto, subir, img_path, eliminar, cancelar, eliminar2
-foto()
+from objetos.Obj_home import Ajustes, nombre, apaterno, amaterno, eliminar, cancelar, eliminar2
+from objetos.funciones import foto, ruta
 Ajustes
 nombre
 apaterno
 amaterno
-subir
-img_path
 eliminar
 cancelar
 eliminar2
+subir = '//*[@id="configurator-input-file-upload"]'
+foto(subir)
+img_path = ruta
+print(img_path)
 cambiarEmail = '/html/body/app-root/app-dashboard/div/app-configuration-dashboard/div/div/div/div[2]/div/app-configuration-profile/div/div/div[2]/div/div/div/div/div/div[2]/span'
 newEmail = '//*[@id="emailNew"]'
 newEmail2 = '//*[@id="confirmEmail"]'
