@@ -1,6 +1,7 @@
 from test.Login import loginValido
 from objetos.browser import driver
 import time
+from test.prueba import prueba
 from objetos.funciones import click_elemento, text_elemento, cambio_imagen
 from objetos.Obj_home import clientes, pausada, borrador, cerradas, activas, vacantes, Btnperfil, configuracion, nombre, \
     apaterno, amaterno, subir, img_path, creditos, equipo, historial, tutorial, chat, Ajustes, eliminar, cancelar, \
@@ -63,27 +64,18 @@ def ajustes():
         click_elemento(eliminar, carpeta, 3)
         click_elemento(eliminar2, carpeta, 3)
         cambio_imagen(subir, img_path, carpeta, 3)
-        
         print("ya pasaron los ajustes")
         return "ya pasaron los ajustes"
     except Exception as e:
         print("Error al pasar los ajustes", str(e))
         return "Fallo los ajustes"
 
-
-
-
-
-loginValido()
-
-pasa_home()
-
-menu()
-
-perfil()
-
-ajustes()
-
+def testSuiteHome():
+    loginValido()
+    pasa_home()
+    menu()
+    perfil()
+    ajustes()
 
 
 

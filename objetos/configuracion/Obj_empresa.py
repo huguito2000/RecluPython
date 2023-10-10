@@ -1,13 +1,8 @@
-import random
-def foto():
-    global imagen
-    imagen = random.randint(0,10)
-    print(imagen)
-    return imagen
+from objetos.funciones import foto, ruta
 
-foto()
 logo = '/html/body/app-root/app-dashboard/div/app-configuration-dashboard/div/div/div/div[2]/div/app-configuration-company/div/div/form/div[1]/div/div/div[2]/div/input'
-img_path =('/Users/huguito/PycharmProjects/pythonProject/pythonProject/Reclutador/Archivos/' + str(imagen) +'.jpeg')
+foto(logo)
+img_path = ruta
 empresa = '/html/body/app-root/app-dashboard/div/app-configuration-dashboard/div/div/div/div[1]/div/div/div/ul/li[2]'
 eliminar = '/html/body/app-root/app-dashboard/div/app-configuration-dashboard/div/div/div/div[2]/div/app-configuration-company/div/div/form/div[1]/div/div/div[2]/div/span[2]'
 eliminar2 = '/html/body/ngb-modal-window/div/div/div/div[3]/div[2]/button'
