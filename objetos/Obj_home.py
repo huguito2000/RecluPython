@@ -1,4 +1,5 @@
-import random
+from objetos.funciones import foto, ruta
+
 
 creditos = '//*[@id="sidebar"]/ul/li[1]/a'
 vacantes = '//*[@id="sidebar"]/ul/li[2]/a'
@@ -20,17 +21,12 @@ configuracion ='/html/body/app-root/app-dashboard/div/app-vacantes/app-sidenav-v
 nombre = '//*[@id="name"]'
 apaterno = '//*[@id="firsLastName"]'
 amaterno = '//*[@id="secondLastName"]'
-
-def foto():
-    global imagen
-    imagen = random.randint(0,10)
-    print(imagen)
-    return imagen
-
-
-foto()
 subir = '//*[@id="configurator-input-file-upload"]'
-img_path =('/Users/huguito/PycharmProjects/pythonProject/pythonProject/Reclutador/Archivos/' + str(imagen) +'.jpeg')
+
+foto(subir)
+img_path = ruta
+print(img_path)
+
 eliminar = '/html/body/app-root/app-dashboard/div/app-configuration-dashboard/div/div/div/div[2]/div/app-configuration-profile/div/div/div[1]/div/div/div/div/div/div[2]/div/div/span[2]'
 cancelar = '/html/body/ngb-modal-window/div/div/div/div[3]/div[1]/button'
 eliminar2 = '/html/body/ngb-modal-window/div/div/div/div[3]/div[2]/button'

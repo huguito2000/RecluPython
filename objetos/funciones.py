@@ -3,6 +3,8 @@ from datetime import datetime
 from selenium.webdriver.common.by import By
 from objetos.browser import driver
 import time
+import random
+from selenium.webdriver.support.ui import Select
 
 contador = 1
 def captura(carpeta:str):
@@ -30,8 +32,27 @@ def text_elemento(xpath, valor,carpeta:str, segundos = 1):
     CampoNombres.send_keys(valor)
     captura_time(carpeta, segundos)
 
+ruta = ''
+def foto(xpath):
+    global ruta
+    imagen = random.randint(0,10)
+    print(imagen)
+    ruta = ('/Users/huguito/PycharmProjects/pythonProject/pythonProject/Reclutador/Archivos/' + str(imagen) +'.jpeg')
+    print(ruta)
+    return ruta
+
+
 def cambio_imagen(xpath, valor, carpeta: str, segundos = 2):
     perfil = driver.find_element(By.XPATH, xpath)
     perfil.send_keys(valor)
     time.sleep(segundos)
     captura_time(carpeta, segundos)
+
+def comboBox(xpath, valor, carpeta:str,segundos = 2):
+    nombres = driver.find_element(By.XPATH, xpath)
+    drop = Select(nombres)
+    drop.select_by_index(valor)
+    captura_time(carpeta, segundos)
+
+
+

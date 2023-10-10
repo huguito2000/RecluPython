@@ -3,10 +3,11 @@ from reportlab.lib.pagesizes import letter
 from reportlab.pdfgen import canvas
 from test.Login import loginValido
 from test.home import pasa_home, menu, perfil, ajustes
+from test.registro import registroPruebas
 
 now = datetime.now()
 fecha = str(now.day) + ' del ' + str(now.month)+ " en el minuto " +str(now.minute)
-def generar_informe_pdf(nombre_archivo, resultado_login, resultado_home, resultado_menu,resultado_perfil, resultado_ajustes):
+def generar_informe_pdf(nombre_archivo, resultado_login, resultado_home, resultado_menu,resultado_perfil, resultado_ajustes, resultado_regitroPrueba):
     global fecha
     c = canvas.Canvas(nombre_archivo, pagesize=letter)
     c.drawString(72, 750, "Informe de Prueba")
@@ -19,6 +20,7 @@ def generar_informe_pdf(nombre_archivo, resultado_login, resultado_home, resulta
     c.drawString(72, 620, resultado_menu)
     c.drawString(72, 590, resultado_perfil)
     c.drawString(72, 560, resultado_ajustes)
+    c.drawString(72, 530, resultado_regitroPrueba)
 
     c.save()
 
@@ -28,5 +30,6 @@ if __name__ == '__main__':
     resultado_menu = menu()
     resultado_perfil = perfil()
     resultado_ajustes = ajustes()
+    resultado_registroPrueba = registroPruebas()
     nombre_archivo = "reportes/informe"+fecha+".pdf"
-    generar_informe_pdf(nombre_archivo, resultado_login, resultado_home, resultado_menu, resultado_perfil,resultado_ajustes)
+    generar_informe_pdf(nombre_archivo, resultado_login, resultado_home, resultado_menu, resultado_perfil,resultado_ajustes, resultado_registroPrueba)
