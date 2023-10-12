@@ -45,6 +45,11 @@ def text_elemento_intro(xpath, valor,carpeta:str, segundos = 1):
     CampoNombres.send_keys(Keys.ENTER)
     captura_time(carpeta, segundos)
 
+def scrollearElemento(xpath):
+    element = driver.find_element(By.XPATH, xpath)
+    driver.implicitly_wait(2)
+    element.location_once_scrolled_into_view
+
 ruta = ''
 def foto(xpath):
     global ruta
