@@ -1,7 +1,6 @@
 from test.Login import loginValido
 from objetos.browser import driver
 import time
-from test.prueba import prueba
 from objetos.funciones import click_elemento, text_elemento, cambio_imagen
 from objetos.Obj_home import clientes, pausada, borrador, cerradas, activas, vacantes, Btnperfil, configuracion, nombre, \
     apaterno, amaterno, subir, img_path, creditos, equipo, historial, tutorial, chat, Ajustes, eliminar, cancelar, \

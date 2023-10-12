@@ -1,9 +1,9 @@
 import time
-from test.registro import correo, registroValido
+from test.registro.registro import correo, registroValido
 from objetos.browser import driver
 from selenium.webdriver.common.by import By
 from objetos.Obj_login import password, BtnContinuar, email
-from objetos.registro.Obj_confirmacion import newCode, code, code1, code2, code3, code4, continuar
+from objetos.registro.Obj_confirmacion import newCode, code, code1, code2, code3, code4, continuar, perfil, cerrarSesion
 from objetos.registro.Obj_nombre import nombreR, apellidoP, empresa, sector, giro, continuarN
 from objetos.funciones import click_elemento, text_elemento, captura_time, comboBox
 from objetos.Obj_home import clientes, pausada, borrador, cerradas, activas, vacantes, \
@@ -67,12 +67,16 @@ def confirmacionValida():
         driver.switch_to.window(driver.window_handles[0])
         time.sleep(5)
         click_elemento(vacantes, carpeta, 3)
+        click_elemento(perfil,carpeta,2)
+        click_elemento(cerrarSesion, carpeta, 2)
+
+
         print("ya regrese a la pestaña principal")
         return "paso el menu"
     except Exception as e:
         print("Error al pasar la confirmación", str(e))
         return "Fallo los confirmación"
 
-confirmacionValida()
+
 
 

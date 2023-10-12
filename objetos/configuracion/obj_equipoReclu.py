@@ -1,0 +1,5 @@
+reclutamiento = '/html/body/app-root/app-dashboard/div/app-configuration-dashboard/div/div/div/div[1]/div/div/div/ul/li[4]'
+invitar = '/html/body/app-root/app-dashboard/div/app-configuration-dashboard/div/div/div/div[2]/div/app-configuration-recruitment-team/div[1]/div[2]/span'
+email = '//*[@id="email"]'
+cancelar = '/html/body/ngb-modal-window/div/div/div[3]/div/div/span'
+btn_invitar = '/html/body/ngb-modal-window/div/div/div[3]/div/div/button'

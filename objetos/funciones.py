@@ -1,5 +1,7 @@
 import os
 from datetime import datetime
+
+from selenium.webdriver import Keys
 from selenium.webdriver.common.by import By
 from objetos.browser import driver
 import time
@@ -23,13 +25,24 @@ def captura_time(carpeta:str, segundos):
 
 def click_elemento(xpath,carpeta:str, segundos = 1 ):
     Btnhome = driver.find_element(By.XPATH, xpath)
+    driver.implicitly_wait(2)
     Btnhome.click()
     captura_time(carpeta, segundos)
 
 def text_elemento(xpath, valor,carpeta:str, segundos = 1):
     CampoNombres = driver.find_element(By.XPATH, xpath)
+    driver.implicitly_wait(2)
     CampoNombres.clear()
     CampoNombres.send_keys(valor)
+    captura_time(carpeta, segundos)
+
+def text_elemento_intro(xpath, valor,carpeta:str, segundos = 1):
+    CampoNombres = driver.find_element(By.XPATH, xpath)
+    driver.implicitly_wait(2)
+    CampoNombres.clear()
+    CampoNombres.send_keys(valor)
+    time.sleep(1)
+    CampoNombres.send_keys(Keys.ENTER)
     captura_time(carpeta, segundos)
 
 ruta = ''
@@ -44,12 +57,14 @@ def foto(xpath):
 
 def cambio_imagen(xpath, valor, carpeta: str, segundos = 2):
     perfil = driver.find_element(By.XPATH, xpath)
+    driver.implicitly_wait(2)
     perfil.send_keys(valor)
     time.sleep(segundos)
     captura_time(carpeta, segundos)
 
 def comboBox(xpath, valor, carpeta:str,segundos = 2):
     nombres = driver.find_element(By.XPATH, xpath)
+    driver.implicitly_wait(2)
     drop = Select(nombres)
     drop.select_by_index(valor)
     captura_time(carpeta, segundos)
