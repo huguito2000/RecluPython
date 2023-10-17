@@ -27,6 +27,7 @@ def generar_informe_pdf(nombre_archivo, resultado_login, resultado_home, resulta
     c.drawString(72, 490, resultado_cliente)
     c.drawString(72, 470, resultado_perfil)
     c.drawString(72, 450, resultado_empresa)
+    c.drawString(72, 420, resultado_empresa)
     c.save()
 
 

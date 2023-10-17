@@ -43,7 +43,6 @@ def registroPruebas():
         text_elemento(password2, 'Abcd.1234', carpeta, 1)
         click_elemento(mostrar2, carpeta, 1)
         click_elemento(ocultar2, carpeta, 1)
-        click_elemento(legales, carpeta, 1)
         click_elemento(continuar, carpeta, 3)
         captura_time(carpeta, 3)
         print("ya se hizo el registro")

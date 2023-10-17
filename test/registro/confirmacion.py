@@ -1,5 +1,5 @@
 import time
-from test.registro.registro import correo, registroValido
+from test.registro.registro import correo, registroPruebas
 from objetos.browser import driver
 from selenium.webdriver.common.by import By
 from objetos.Obj_login import password, BtnContinuar, email
@@ -13,9 +13,9 @@ contador = 0
 
 carpeta = 'confirmacion'
 
-def confirmacionValida():
+def registroCompleto():
     try:
-        registroValido() # se manda a llamar a la clase de registro
+        registroPruebas() # se manda a llamar a la clase de registro
         captura_time(carpeta, 2)
         click_elemento(newCode,carpeta, 1)
 
@@ -69,10 +69,8 @@ def confirmacionValida():
         click_elemento(vacantes, carpeta, 3)
         click_elemento(perfil,carpeta,2)
         click_elemento(cerrarSesion, carpeta, 2)
-
-
         print("ya regrese a la pestaña principal")
-        return "paso el menu"
+        return "se termino el registro completo"
     except Exception as e:
         print("Error al pasar la confirmación", str(e))
         return "Fallo los confirmación"
