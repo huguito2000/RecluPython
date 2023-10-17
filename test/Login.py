@@ -1,5 +1,4 @@
 import time
-
 from objetos.Obj_login import email, password, BtnContinuar, mostrar, ocultar
 from objetos.funciones import click_elemento, text_elemento, captura_time
 from objetos.Obj_home import vacantes

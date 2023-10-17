@@ -1,11 +1,13 @@
 from objetos.funciones import click_elemento, text_elemento, cambio_imagen, captura_time, comboBox
 from objetos.Obj_home import Ajustes
 from test.Login import loginValido
+from test.configuracion.perfil import perfilHapyPath
 from objetos.configuracion.Obj_empresa import (empresa, logo, eliminar, eliminar2, cancelar, nombreEmpresa, sector, giro,
 tipoEmpresa, empleados1a10, empleados11a50, empleados50a250, empleados250, pais, cancelar2,actualizar, img_path)
 
 def empresa():
     try:
+        perfilHapyPath()
         carpeta = 'empresa'
         captura_time(carpeta,2)
         loginValido()

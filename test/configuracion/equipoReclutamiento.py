@@ -3,10 +3,12 @@ import time
 from objetos.configuracion.obj_equipoReclu import reclutamiento, invitar, btn_invitar, email, cancelar
 from objetos.Obj_home import Ajustes
 from objetos.funciones import text_elemento, click_elemento, captura_time
-
+from test.configuracion.facturacion import Testfacturacion
+from objetos.browser import driver
 
 def equipoReclu():
     try:
+        Testfacturacion()
         carpeta = 'equipoR eclu'
         num = random.randint(1,100)
         click_elemento(Ajustes,carpeta,2)
@@ -21,8 +23,10 @@ def equipoReclu():
         text_elemento(email,'huguito.reclutador' + str(num) + '@yopmail.com',carpeta,2)
         click_elemento(btn_invitar,carpeta,2)
         time.sleep(1)
+        driver.quit()
+        time.sleep(1)
         print('ya paso el equipo de reclutamiento')
-        return 'ya paso el equipo de reclutamiento'
+        return 'ya paso el happy path'
     except Exception as e:
         print('No paso el equipo de reclutamiento')
         return 'No paso el equipo de reclutamiento'

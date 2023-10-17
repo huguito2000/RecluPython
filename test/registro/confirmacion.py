@@ -1,4 +1,5 @@
 import time
+from objetos.browser import driver
 from test.registro.registro import correo, registroPruebas
 from objetos.browser import driver
 from selenium.webdriver.common.by import By
@@ -69,6 +70,7 @@ def registroCompleto():
         click_elemento(vacantes, carpeta, 3)
         click_elemento(perfil,carpeta,2)
         click_elemento(cerrarSesion, carpeta, 2)
+        driver.quit()
         print("ya regrese a la pestaña principal")
         return "se termino el registro completo"
     except Exception as e:

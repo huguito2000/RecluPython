@@ -74,6 +74,8 @@ def perfil():
     except Exception as e:
         print("no paso correctamente el perfil")
         return "no paso correctamente el perfil"
+def perfilHapyPath():
+    perfil()
+    cambioPassword()
 
-perfil()
 

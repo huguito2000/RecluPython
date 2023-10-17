@@ -1,5 +1,6 @@
 from objetos.Obj_home import vacantes
 from test.Login import loginValido
+from test.home import testSuiteHome
 from objetos.funciones import captura_time, click_elemento, text_elemento, comboBox
 from objetos.Obj_clientes import clientes, nuevo, cerrar, nombreCliente, sector, giro, tipoEmpresa, cantidad1a10, \
     cantidad11a50, cantidad51a250, cantidad250, guardar, hambuguesa, eliminar, cancelar, eliminar2
@@ -10,6 +11,7 @@ carpeta = 'clientes'
 loginValido()
 def newCliente():
     try:
+        testSuiteHome()
         click_elemento(clientes, carpeta, 1)
         click_elemento(nuevo, carpeta, 1)
         click_elemento(cerrar, carpeta, 1)

@@ -17,7 +17,9 @@ def generar_informe_pdf(nombre_archivo, reporteRegistro):
     c.save()
 
 if __name__ == '__main__':
+    def registro():
+        resultado_registro = registroCompleto()
+        nombre_archivo = "reportes/informe" + fecha + ".pdf"
+        generar_informe_pdf(nombre_archivo, resultado_registro)
 
-    resultado_registro = registroCompleto()
-    nombre_archivo = "reportes/informe" + fecha + ".pdf"
-    generar_informe_pdf(nombre_archivo, resultado_registro)
+    registro()

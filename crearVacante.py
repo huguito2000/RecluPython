@@ -18,7 +18,7 @@ def generar_informe_pdf(nombre_archivo, reporteCrearVacante):
     c.save()
 
 if __name__ == '__main__':
-
-    resultado_crearVacante = publicarVacante()
-    nombre_archivo = "reportes/informe" + fecha + ".pdf"
-    generar_informe_pdf(nombre_archivo, resultado_crearVacante)
+    def crearVacante():
+        resultado_crearVacante = publicarVacante()
+        nombre_archivo = "reportes/informe" + fecha + ".pdf"
+        generar_informe_pdf(nombre_archivo, resultado_crearVacante)
