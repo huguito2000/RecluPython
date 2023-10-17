@@ -1,12 +1,11 @@
 import time
-from objetos.browser import driver
 from test.registro.registro import correo, registroPruebas
 from objetos.browser import driver
 from selenium.webdriver.common.by import By
 from objetos.Obj_login import password, BtnContinuar, email
 from objetos.registro.Obj_confirmacion import newCode, code, code1, code2, code3, code4, continuar, perfil, cerrarSesion
 from objetos.registro.Obj_nombre import nombreR, apellidoP, empresa, sector, giro, continuarN
-from objetos.funciones import click_elemento, text_elemento, captura_time, comboBox
+from objetos.funciones import click_elemento, text_elemento, captura_time, comboBox, codigo
 from objetos.Obj_home import clientes, pausada, borrador, cerradas, activas, vacantes, \
     creditos, equipo, historial, tutorial, chat, Ajustes
 
@@ -20,18 +19,7 @@ def registroCompleto():
         captura_time(carpeta, 2)
         click_elemento(newCode,carpeta, 1)
 
-        Confirmacion = driver.find_element(By.XPATH, code)
-        codigo = Confirmacion.text
-        print(codigo.split(','))
-        print(codigo[0])
-        print(codigo[1])
-        print(codigo[2])
-        print(codigo[3])
-        captura_time(carpeta, 2)
-        text_elemento(code1, codigo[0], carpeta, 1)
-        text_elemento(code2, codigo[1], carpeta, 1)
-        text_elemento(code3, codigo[2], carpeta, 1)
-        text_elemento(code4, codigo[3], carpeta, 1)
+        codigo(code, carpeta, code1, code2, code3, code4, 2)
         click_elemento(continuar,carpeta, 3)
 
         text_elemento(nombreR, 'Hugo', carpeta, 1)
