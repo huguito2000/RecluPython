@@ -51,11 +51,21 @@ def scrollearElemento(xpath):
     element.location_once_scrolled_into_view
 
 ruta = ''
-def foto(xpath):
+def getRuta():
+    imgRuta = os.getcwd().split('/')
+    print(len(imgRuta))
+    base = ''
+    for i in range(len(imgRuta) - 1):
+        print(imgRuta[i])
+        base = base + str(imgRuta[i]) + '/'
+    return base
+
+def foto():
     global ruta
-    imagen = random.randint(0,10)
+    baseImg = getRuta()
+    imagen = random.randint(0, 11)
     print(imagen)
-    ruta = ('/Users/huguito/PycharmProjects/pythonProject/pythonProject/Reclutador/Archivos/' + str(imagen) +'.jpeg')
+    ruta = (baseImg + 'Archivos/' + str(imagen) + '.jpeg')
     print(ruta)
     return ruta
 

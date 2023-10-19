@@ -1,4 +1,4 @@
-from objetos.funciones import foto, ruta
+from objetos.funciones import foto
 
 
 creditos = '//*[@id="sidebar"]/ul/li[1]/a'
@@ -23,8 +23,7 @@ apaterno = '//*[@id="firsLastName"]'
 amaterno = '//*[@id="secondLastName"]'
 subir = '//*[@id="configurator-input-file-upload"]'
 
-foto(subir)
-img_path = ruta
+img_path = foto()
 print(img_path)
 
 eliminar = '/html/body/app-root/app-dashboard/div/app-configuration-dashboard/div/div/div/div[2]/div/app-configuration-profile/div/div/div[1]/div/div/div/div/div/div[2]/div/div/span[2]'
