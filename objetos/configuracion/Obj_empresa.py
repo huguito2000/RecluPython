@@ -1,7 +1,7 @@
 from objetos.funciones import foto, ruta
 
 logo = '/html/body/app-root/app-dashboard/div/app-configuration-dashboard/div/div/div/div[2]/div/app-configuration-company/div/div/form/div[1]/div/div/div[2]/div/input'
-foto(logo)
+foto()
 img_path = ruta
 empresa = '/html/body/app-root/app-dashboard/div/app-configuration-dashboard/div/div/div/div[1]/div/div/div/ul/li[2]'
 eliminar = '/html/body/app-root/app-dashboard/div/app-configuration-dashboard/div/div/div/div[2]/div/app-configuration-company/div/div/form/div[1]/div/div/div[2]/div/span[2]'
@@ -18,3 +18,5 @@ empleados250 = '/html/body/app-root/app-dashboard/div/app-configuration-dashboar
 pais = '//*[@id="pais"]'
 cancelar2 = '/html/body/app-root/app-dashboard/div/app-configuration-dashboard/div/div/div/div[2]/div/app-configuration-company/div/div/form/div[8]/span[1]'
 actualizar = '/html/body/app-root/app-dashboard/div/app-configuration-dashboard/div/div/div/div[2]/div/app-configuration-company/div/div/form/div[8]/span[2]'
+perfil = '/html/body/app-root/app-dashboard/div/app-configuration-dashboard/app-main-navbar/div/div/div[5]/app-notifications-and-photo/div/button'
+cerrarSesion = '/html/body/app-root/app-dashboard/div/app-configuration-dashboard/app-main-navbar/div/div/div[5]/app-notifications-and-photo/div/div/div[2]/ul/li[5]/button'

@@ -61,7 +61,7 @@ def getRuta():
     imgRuta = os.getcwd().split('/')
     print(len(imgRuta))
     base = ''
-    for i in range(len(imgRuta) - 1):
+    for i in range(len(imgRuta)):
         print(imgRuta[i])
         base = base + str(imgRuta[i]) + '/'
     return base
@@ -102,6 +102,7 @@ def codigo(xpath, carpeta, code1, code2, code3, code4, segundos):
     text_elemento(code2, codigo[1], carpeta, 1)
     text_elemento(code3, codigo[2], carpeta, 1)
     text_elemento(code4, codigo[3], carpeta, 1)
+
 
 
 

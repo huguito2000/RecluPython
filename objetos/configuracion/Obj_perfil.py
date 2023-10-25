@@ -8,7 +8,7 @@ eliminar
 cancelar
 eliminar2
 subir = '//*[@id="configurator-input-file-upload"]'
-foto(subir)
+foto()
 img_path = ruta
 print(img_path)
 cambiarEmail = '/html/body/app-root/app-dashboard/div/app-configuration-dashboard/div/div/div/div[2]/div/app-configuration-profile/div/div/div[2]/div/div/div/div/div/div[2]/span'
@@ -33,3 +33,5 @@ telefonoCambio = '/html/body/app-root/app-dashboard/div/app-configuration-dashbo
 newTelefono = '/html/body/app-root/app-dashboard/div/app-configuration-dashboard/div/div/div/div[2]/div/app-configuration-profile/div/div/form/div/div/div/input'
 cambiarTelefono = '/html/body/app-root/app-dashboard/div/app-configuration-dashboard/div/div/div/div[2]/div/app-configuration-profile/div/div/div/span[2]'
 cancelarTelefono = '/html/body/app-root/app-dashboard/div/app-configuration-dashboard/div/div/div/div[2]/div/app-configuration-profile/div/div/div/span[1]'
+perfil = '/html/body/app-root/app-dashboard/div/app-configuration-dashboard/app-main-navbar/div/div/div[5]/app-notifications-and-photo/div/button'
+cerrarSesion = '/html/body/app-root/app-dashboard/div/app-configuration-dashboard/app-main-navbar/div/div/div[5]/app-notifications-and-photo/div/div/div[2]/ul/li[5]/button'

@@ -15,7 +15,7 @@ carpeta = 'confirmacion'
 
 def registroCompleto():
     try:
-        registroPruebas() # se manda a llamar a la clase de registro
+
         captura_time(carpeta, 2)
         click_elemento(newCode,carpeta, 1)
 
@@ -58,7 +58,7 @@ def registroCompleto():
         click_elemento(vacantes, carpeta, 3)
         click_elemento(perfil,carpeta,2)
         click_elemento(cerrarSesion, carpeta, 2)
-        driver.quit()
+
         print("ya regrese a la pestaña principal")
         return "se termino el registro completo"
     except Exception as e:

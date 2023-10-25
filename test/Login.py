@@ -37,6 +37,7 @@ def loginValido():
         text_elemento(password, 'Abcd.1234', carpeta,1)
         time.sleep(2)
         click_elemento(BtnContinuar, carpeta, 1)
+
         captura_time(carpeta,2)
         click_elemento(vacantes,carpeta,1)
         print("Inicio de sesión exitoso")
@@ -44,5 +45,6 @@ def loginValido():
     except Exception as e:
         print("Error al iniciar sesión:", str(e))
         return "Fallo"
+
 
 

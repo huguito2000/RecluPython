@@ -2,7 +2,7 @@ from datetime import datetime
 from reportlab.lib.pagesizes import letter
 from reportlab.pdfgen import canvas
 from test.clientes import newCliente
-from test.configuracion.equipoReclutamiento import equipoReclu
+from test.configuracion.equipoReclutamiento4 import equipoReclu
 
 now = datetime.now()
 fecha = str(now.day) + ' del ' + str(now.month)+ " en el minuto " + str(now.minute)
