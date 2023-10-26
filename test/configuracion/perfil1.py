@@ -76,7 +76,6 @@ def DatosPerfil():
         click_elemento(perfil, carpeta, 2)
         click_elemento(cerrarSesion, carpeta,  2)
 
-
         print("ya paso correctamente el perfil")
         return "ya paso correctamente la seccion de perfil"
     except Exception as e:

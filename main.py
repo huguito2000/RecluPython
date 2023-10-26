@@ -1,4 +1,4 @@
-from registro import registro
+from registroCompleto import registro
 from happyPath import happyPath
 from crearVacante import crearVacante
 

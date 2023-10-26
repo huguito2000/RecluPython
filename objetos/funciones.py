@@ -25,26 +25,26 @@ def captura_time(carpeta:str, segundos):
 
 def click_elemento(xpath,carpeta:str, segundos = 1 ):
     Btnhome = driver.find_element(By.XPATH, xpath)
-    driver.implicitly_wait(2)
+    driver.implicitly_wait(130)
     Btnhome.click()
     captura_time(carpeta, segundos)
 
 def borrarTexto(xpath, segundos = 1):
     CampoNombres = driver.find_element(By.XPATH, xpath)
-    driver.implicitly_wait(segundos)
+    driver.implicitly_wait(30)
     CampoNombres.send_keys(Keys.COMMAND + "a")
     time.sleep(1)
     CampoNombres.send_keys(Keys.DELETE)
 def text_elemento(xpath, valor,carpeta:str, segundos = 1):
     CampoNombres = driver.find_element(By.XPATH, xpath)
-    driver.implicitly_wait(2)
+    driver.implicitly_wait(30)
     CampoNombres.clear()
     CampoNombres.send_keys(valor)
     captura_time(carpeta, segundos)
 
 def text_elemento_intro(xpath, valor,carpeta:str, segundos = 1):
     CampoNombres = driver.find_element(By.XPATH, xpath)
-    driver.implicitly_wait(2)
+    driver.implicitly_wait(30)
     CampoNombres.clear()
     CampoNombres.send_keys(valor)
     time.sleep(1)
@@ -53,7 +53,7 @@ def text_elemento_intro(xpath, valor,carpeta:str, segundos = 1):
 
 def scrollearElemento(xpath):
     element = driver.find_element(By.XPATH, xpath)
-    driver.implicitly_wait(2)
+    driver.implicitly_wait(30)
     element.location_once_scrolled_into_view
 
 ruta = ''
@@ -78,14 +78,14 @@ def foto():
 
 def cambio_imagen(xpath, valor, carpeta: str, segundos = 2):
     perfil = driver.find_element(By.XPATH, xpath)
-    driver.implicitly_wait(2)
+    driver.implicitly_wait(30)
     perfil.send_keys(valor)
     time.sleep(segundos)
     captura_time(carpeta, segundos)
 
 def comboBox(xpath, valor, carpeta:str,segundos = 2):
     nombres = driver.find_element(By.XPATH, xpath)
-    driver.implicitly_wait(2)
+    driver.implicitly_wait(30)
     drop = Select(nombres)
     drop.select_by_index(valor)
     captura_time(carpeta, segundos)

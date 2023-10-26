@@ -1,16 +1,13 @@
-from objetos.funciones import click_elemento, comboBox, text_elemento,scrollearElemento
-from test.crearVacante.vacante_manual.paso4 import paso4
+from objetos.funciones import click_elemento, text_elemento,scrollearElemento
 from objetos.crearVacante.vacanteManual.Obj_paso5 import psicometrica1, psicometrica2, psicometrica3, psicometrica4, \
     psicometrica5, psicometrica6, psicometrica7, psicometrica8, psicometrica9, psicometrica10, psicometrica11, \
     psicometrica12, psicometrica13, addpreguntaR1, preguntaR1, addpreguntaR2, preguntaR2, guardarR1, guardarR2, \
     siguiente
 
-def paso5():
+def p5():
     try:
         carpeta = 'paso5'
-        paso4 ()
         def psicometrias():
-
             click_elemento(psicometrica1, carpeta, 1)
             click_elemento(psicometrica2, carpeta, 1)
             click_elemento(psicometrica3, carpeta, 1)

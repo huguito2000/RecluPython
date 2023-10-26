@@ -14,4 +14,6 @@ hambuguesa = '//*[@id="dropdownClient"]'
 eliminar = '//*[@id="tableCerradas"]/tbody/tr[1]/td[8]/div/div/button[2]'
 cancelar = '/html/body/ngb-modal-window/div/div/div/div[3]/span[1]'
 eliminar2 =  '/html/body/ngb-modal-window/div/div/div/div[3]/span[2]'
+perfil = '/html/body/app-root/app-dashboard/div/app-vacantes/app-sidenav-vacantes/app-main-navbar/div/div/div[5]/app-notifications-and-photo/div/button'
+cerrarSesion = '/html/body/app-root/app-dashboard/div/app-vacantes/app-sidenav-vacantes/app-main-navbar/div/div/div[5]/app-notifications-and-photo/div/div/div[2]/ul/li[5]/button'
 

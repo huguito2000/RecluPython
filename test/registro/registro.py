@@ -54,20 +54,27 @@ def registroPruebas():
 
 
 def registroValido():
-    global correo
-    time.sleep(2)
-    carpeta = 'registro'
-    click_elemento(crearCuenta, carpeta, 1)
-    text_elemento(email, correo, carpeta, 1)
-    text_elemento(telefono, '5569777077', carpeta, 1)
-    click_elemento(legales, carpeta, 1)
-    text_elemento(password, 'Abcd.1234', carpeta, 1)
-    click_elemento(mostrar1, carpeta, 1)
-    click_elemento(ocultar1, carpeta, 1)
-    text_elemento(password2, 'Abcd.1234', carpeta, 1)
-    click_elemento(mostrar2, carpeta, 1)
-    click_elemento(ocultar2, carpeta, 1)
-    click_elemento(continuar, carpeta, 3)
-    captura_time(carpeta, 3)
+    try:
+        global correo
+        time.sleep(2)
+        carpeta = 'registro'
+        click_elemento(crearCuenta, carpeta, 1)
+        text_elemento(email, correo, carpeta, 1)
+        text_elemento(telefono, '5569777077', carpeta, 1)
+        click_elemento(legales, carpeta, 1)
+        text_elemento(password, 'Abcd.1234', carpeta, 1)
+        click_elemento(mostrar1, carpeta, 1)
+        click_elemento(ocultar1, carpeta, 1)
+        text_elemento(password2, 'Abcd.1234', carpeta, 1)
+        click_elemento(mostrar2, carpeta, 1)
+        click_elemento(ocultar2, carpeta, 1)
+        click_elemento(continuar, carpeta, 3)
+        captura_time(carpeta, 3)
+        print('se termino el registro valido')
+        return 'se termino el registro valido correctamente'
+    except Exception as e:
+        print('No se termino el registro valido ', str(e))
+        return 'No se termino el registro valido '
+
 
 

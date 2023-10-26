@@ -13,16 +13,22 @@ def equipoReclu():
         loginValido()
         carpeta = 'equipoR eclu'
         num = random.randint(1, 100)
+        print(num)
         click_elemento(Ajustes, carpeta, 2)
         click_elemento(reclutamiento, carpeta, 2)
         click_elemento(invitar, carpeta, 2)
         click_elemento(cancelar, carpeta, 2)
         click_elemento(cancelar, carpeta, 2)
         click_elemento(invitar, carpeta, 2)
+
         text_elemento(email, 'huguito.reclutador@yopmail.com', carpeta, 2)
         click_elemento(btn_invitar, carpeta, 2)
-        time.sleep(2)
-        text_elemento(email, 'huguito.reclutador' + str(num) + '@yopmail.com', carpeta, 2)
+        invitacion = 'huguito.reclutador' + str(num) + '@yopmail.com'
+        print(invitacion)
+        time.sleep(3)
+
+        click_elemento(invitar, carpeta, 2)
+        text_elemento(email, invitacion, carpeta, 2)
         click_elemento(btn_invitar, carpeta, 2)
         time.sleep(5)
 
@@ -34,3 +40,5 @@ def equipoReclu():
     except Exception as e:
         print('No paso el equipo de reclutamiento')
         return 'No paso el equipo de reclutamiento'
+
+equipoReclu()

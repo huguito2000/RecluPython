@@ -1,11 +1,14 @@
 import random
 from test.Login import loginValido
 from objetos.Obj_home import vacantes
-from objetos.funciones import text_elemento, click_elemento, comboBox, captura_time,text_elemento_intro, scrollearElemento
-from objetos.crearVacante.vacanteManual.Obj_paso1 import crearVacante, manual, puesto, especialidad, numVacantes, sueldoMensual, min, max, bonos, \
+from objetos.funciones import text_elemento, click_elemento, comboBox, captura_time, text_elemento_intro, \
+    scrollearElemento
+from objetos.crearVacante.vacanteManual.Obj_paso1 import crearVacante, manual, puesto, especialidad, numVacantes, \
+    sueldoMensual, min, max, bonos, \
     bruto, neto, mostrarSueldo, beneficios, nomEmpresa, empresa, pais, estado, municipio, modalidad, siguiente
 
-def paso1():
+
+def p1():
     try:
         loginValido()
         carpeta = 'paso1'
@@ -16,7 +19,7 @@ def paso1():
         click_elemento(crearVacante, carpeta, 1)
         click_elemento(manual, carpeta, 1)
         text_elemento_intro(puesto, aleatorio, carpeta, 1)
-        text_elemento(especialidad,'automatizacion', carpeta, 1)
+        text_elemento(especialidad, 'automatizacion', carpeta, 1)
 
         comboBox(sueldoMensual, 2, carpeta, 1)
         text_elemento(min, '20000', carpeta, 1)
@@ -32,7 +35,7 @@ def paso1():
 
         click_elemento(beneficios, carpeta, 1)
 
-        text_elemento_intro(nomEmpresa,'involve', carpeta, 1)
+        text_elemento_intro(nomEmpresa, 'involve', carpeta, 1)
         scrollearElemento(nomEmpresa)
 
         comboBox(pais, 1, carpeta, 1)

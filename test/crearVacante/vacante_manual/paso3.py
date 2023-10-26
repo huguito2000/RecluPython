@@ -1,11 +1,9 @@
 from objetos.funciones import click_elemento, comboBox, text_elemento_intro
-from test.crearVacante.vacante_manual.paso2 import paso2
 from objetos.crearVacante.vacanteManual.Obj_paso3 import nivelEstudios, estatuAcademico, titulo, institucion, addTalento, area, administracion, \
     cancelar, agregar, hdura, addHduras, hBlandas, addHblandas, idioma, addIdioma, siguiente
 
-def paso3():
+def p3():
     try:
-        paso2()
         carpeta = 'paso3'
         comboBox(nivelEstudios,6,carpeta,2,)
         comboBox(estatuAcademico,5,carpeta,2,)

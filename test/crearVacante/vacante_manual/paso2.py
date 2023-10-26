@@ -1,11 +1,9 @@
 from objetos.funciones import text_elemento, click_elemento, comboBox, captura_time, text_elemento_intro
-from test.crearVacante.vacante_manual.paso1 import paso1
 from objetos.crearVacante.vacanteManual.Obj_paso2 import objetivo, tipoPuesto, personas_Si, personas_No, funciones, \
-    jornadaLaboral, horario, contrato, guardar, siguiente
+    jornadaLaboral, horario, contrato, siguiente
 
-def paso2():
+def p2():
     try:
-        paso1()
         carpeta = 'paso2'
         text_elemento(objetivo, 'hacer pruebas', carpeta, 1)
         comboBox(tipoPuesto, 7, carpeta, 1)

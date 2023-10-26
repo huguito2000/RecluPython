@@ -14,4 +14,9 @@ pais = '/html/body/app-root/app-dashboard/div/app-crear-vacante/div/div[1]/app-v
 estado = '/html/body/app-root/app-dashboard/div/app-crear-vacante/div/div[1]/app-vacante-ia/form/div[4]/div/div[3]/div/div/div[1]/div/select'
 municipio = '/html/body/app-root/app-dashboard/div/app-crear-vacante/div/div[1]/app-vacante-ia/form/div[4]/div/div[3]/div/div/div[2]/div/select'
 modalidad = '/html/body/app-root/app-dashboard/div/app-crear-vacante/div/div[1]/app-vacante-ia/form/div[5]/div/div[2]/div[2]/div/select'
+siguiente1 = '/html/body/app-root/app-dashboard/div/app-crear-vacante/div/div[1]/app-disclaimer/div/div[2]/div/div[2]/div/button'
 siguiente = '/html/body/app-root/app-dashboard/div/app-crear-vacante/div/div[1]/app-vacante-ia/form/div[6]/div/div/div/button'
+perfil = '/html/body/app-root/app-dashboard/div/app-borradores/app-sidenav-vacantes/app-main-navbar/div/div/div[5]/app-notifications-and-photo/div/button'
+cerrarSesion = '/html/body/app-root/app-dashboard/div/app-borradores/app-sidenav-vacantes/app-main-navbar/div/div/div[5]/app-notifications-and-photo/div/div/div[2]/ul/li[5]/button'
+
+borrador = '/html/body/app-root/app-dashboard/div/app-vacantes/app-sidenav-vacantes/div/div[1]/div/a[3]/span[1]'

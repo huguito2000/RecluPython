@@ -1,12 +1,10 @@
 from objetos.funciones import click_elemento, comboBox, text_elemento
-from test.crearVacante.vacante_manual.paso3 import paso3
 from objetos.crearVacante.vacanteManual.Obj_paso4 import addPregunta, expLaboral, expPregunta, comboBox1, expSi, expNo, \
     hDura, duraPregunta, comboBox2, yearExp, hBlanda, blandaPrgunta, comboBox3, blandaSi, blamdaNo, siguiente
 
-def paso4():
+def p4():
     try:
         carpeta = 'paso4'
-        paso3()
         click_elemento(addPregunta, carpeta,2)
 
         click_elemento(expLaboral, carpeta, 2)
@@ -37,7 +35,7 @@ def paso4():
         click_elemento(blandaSi, carpeta, 2)
         click_elemento(siguiente, carpeta, 2)
         print('paso el paso 4')
-        return  'paso el paso 4'
+        return 'paso el paso 4'
     except Exception as e:
         print('no paso el paso 4', str(e))
         return 'no paso el paso 4'
