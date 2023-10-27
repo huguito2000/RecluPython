@@ -30,5 +30,7 @@ eliminar = '/html/body/app-root/app-dashboard/div/app-configuration-dashboard/di
 cancelar = '/html/body/ngb-modal-window/div/div/div/div[3]/div[1]/button'
 eliminar2 = '/html/body/ngb-modal-window/div/div/div/div[3]/div[2]/button'
 
+fPerfil = '/html/body/app-root/app-dashboard/div/app-vacantes/app-sidenav-vacantes/app-main-navbar/div/div/div[5]/app-notifications-and-photo/div/button'
+cerrarSesion = '/html/body/app-root/app-dashboard/div/app-vacantes/app-sidenav-vacantes/app-main-navbar/div/div/div[5]/app-notifications-and-photo/div/div/div[2]/ul/li[5]/button'
 
 

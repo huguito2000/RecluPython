@@ -1,20 +1,14 @@
-from test.registro.registro import registroPruebas
-from test.registro.confirmacion import registroCompleto
-from test.home import pasa_home, menu, perfil, ajustes
-from test.clientes import newCliente
+from registroCompleto import registro
+from happyPath import ReporteHappyPath
+from crearVacanteManual import crearVacante
+from configuracion import ajustes
 
 if __name__ == '__main__':
 
-    registroPruebas()
-    registroCompleto()
-    print('se termino el registro')
-    pasa_home()
-    menu()
-    perfil()
-    ajustes()
-    newCliente()
-
-
+    registro()
+    print('termino el registro')
+    ReporteHappyPath()
+    print('termino el happypath')
 
 
 

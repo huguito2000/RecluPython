@@ -5,7 +5,7 @@ from objetos.registro.Obj_confirmacion import perfil, cerrarSesion
 from objetos.funciones import click_elemento, text_elemento, cambio_imagen
 from objetos.Obj_home import clientes, pausada, borrador, cerradas, activas, vacantes, Btnperfil, configuracion, nombre, \
     apaterno, amaterno, subir, img_path, creditos, equipo, historial, tutorial, chat, Ajustes, eliminar, cancelar, \
-    eliminar2
+    eliminar2, fPerfil, cerrarSesion
 
 carpeta = 'home'
 
@@ -74,7 +74,8 @@ def ajustes():
         time.sleep(5)
 
         click_elemento(vacantes, carpeta, 3)
-        click_elemento(perfil, carpeta, 2)
+        print('paso')
+        click_elemento(fPerfil, carpeta, 2)
         click_elemento(cerrarSesion, carpeta, 2)
         time.sleep(2)
 
@@ -83,6 +84,5 @@ def ajustes():
     except Exception as e:
         print("Error al pasar los ajustes", str(e))
         return "Fallo los ajustes"
-
 
 

@@ -25,7 +25,7 @@ def generar_informe_pdf(nombre_archivo, reporteHome, reporteMenu, reportePerfil,
     c.save()
 
 
-def happyPath():
+def ReporteHappyPath():
     resultado_home = pasa_home()
     resultado_menu = menu()
     resultado_perfil = perfil()
