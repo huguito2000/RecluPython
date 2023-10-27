@@ -25,7 +25,7 @@ def generar_informe_pdf(nombre_archivo, reporteVAcanteIA):
     c.save()
 
 
-def crearVacanteIA():
+def VacanteIA():
 
     resultado_crearVacanteIA = vacanteIA()
 
