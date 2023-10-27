@@ -48,5 +48,5 @@ def vacanteIA():
         print('se creo paso 1 de la vacante por IA')
         return 'se creo paso 1 de la vacante por IA'
     except Exception as e:
-        print('no se creo paso 1 de la vacante por IA')
+        print('no se creo paso 1 de la vacante por IA', str(e))
         return 'no se creo paso 1 de la vacante por IA'
