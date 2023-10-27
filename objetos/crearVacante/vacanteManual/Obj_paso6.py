@@ -4,4 +4,5 @@ publicar = '/html/body/app-root/app-dashboard/div/app-crear-vacante/div/div[1]/a
 
 perfil = '/html/body/app-root/app-dashboard/div/app-vacantes/app-sidenav-vacantes/app-main-navbar/div/div/div[5]/app-notifications-and-photo/div/button'
 
+
 cerrarSesion = '/html/body/app-root/app-dashboard/div/app-vacantes/app-sidenav-vacantes/app-main-navbar/div/div/div[5]/app-notifications-and-photo/div/div/div[2]/ul/li[5]/button'

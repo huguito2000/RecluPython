@@ -8,7 +8,7 @@ def publicarVacante():
         carpeta = 'paso6'
         click_elemento(siguiente, carpeta, 2)
         click_elemento(publicar, carpeta, 2)
-        time.sleep(3)
+        time.sleep(6)
         click_elemento(perfil, carpeta, 2)
         click_elemento(cerrarSesion, carpeta, 2)
         time.sleep(2)

@@ -1,7 +1,6 @@
 from datetime import datetime
 from reportlab.lib.pagesizes import letter
 from reportlab.pdfgen import canvas
-from test.crearVacante.IA.crearVacanteIA import vacanteIA
 from test.crearVacante.vacante_manual.paso1 import p1
 from test.crearVacante.vacante_manual.paso2 import p2
 from test.crearVacante.vacante_manual.paso3 import p3
@@ -13,7 +12,7 @@ now = datetime.now()
 fecha = str(now.day) + ' del ' + str(now.month) + " en el minuto " + str(now.minute)
 
 
-def generar_informe_pdf(nombre_archivo, reporteVAcanteIA, reportePaso1, reportePaso2, reportePaso3, reportePaso4,
+def generar_informe_pdf(nombre_archivo, reportePaso1, reportePaso2, reportePaso3, reportePaso4,
                         reportePaso5, reportePaso6):
     global fecha
     c = canvas.Canvas(nombre_archivo, pagesize=letter)
@@ -22,7 +21,6 @@ def generar_informe_pdf(nombre_archivo, reporteVAcanteIA, reportePaso1, reporteP
 
     # Agregar detalles sobre la ejecución
     c.drawString(72, 690, "Resultado de la pruebas en las funciones")
-    c.drawString(72, 670, reporteVAcanteIA)
     c.drawString(72, 640, reportePaso1)
     c.drawString(72, 590, reportePaso2)
     c.drawString(72, 570, reportePaso3)
@@ -33,7 +31,6 @@ def generar_informe_pdf(nombre_archivo, reporteVAcanteIA, reportePaso1, reporteP
 
 
 def crearVacante():
-    resultado_crearVacanteIA = vacanteIA()
     resultado_paso1 = p1()
     resultado_paso2 = p2()
     resultado_paso3 = p3()
@@ -41,4 +38,5 @@ def crearVacante():
     resultado_paso5 = p5()
     resultado_paso6 = publicarVacante()
     nombre_archivo = "reportes/CrearVancante" + fecha + ".pdf"
-    generar_informe_pdf(nombre_archivo, resultado_crearVacanteIA, resultado_paso1, resultado_paso2, resultado_paso3, resultado_paso4, resultado_paso5, resultado_paso6)
+    generar_informe_pdf(nombre_archivo, resultado_paso1, resultado_paso2, resultado_paso3, resultado_paso4, resultado_paso5, resultado_paso6)
+
