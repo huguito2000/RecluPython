@@ -19,8 +19,13 @@ def generar_informe_pdf(nombre_archivo, reporte_registroPruebas, reporte_registr
     c.save()
 
 def registro():
-    resultado_RegistroPruebas = registroPruebas()
-    resultado_registro = registroCompleto()
-    nombre_archivo = "reportes/registro" + fecha + ".pdf"
-    generar_informe_pdf(nombre_archivo, resultado_RegistroPruebas, resultado_registro)
-
+    try:
+        resultado_RegistroPruebas = registroPruebas()
+        resultado_registro = registroCompleto()
+        nombre_archivo = "reportes/registro" + fecha + ".pdf"
+        generar_informe_pdf(nombre_archivo, resultado_RegistroPruebas, resultado_registro)
+        print('termino el registro')
+        return 'termino el registro completo'
+    except Exception as e:
+        print('no se termino el registro', str(e))
+        return 'no se termino el registro'
