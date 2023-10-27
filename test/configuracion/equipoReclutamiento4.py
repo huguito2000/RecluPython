@@ -11,7 +11,7 @@ from test.Login import loginValido
 def equipoReclu():
     try:
         loginValido()
-        carpeta = 'equipoR eclu'
+        carpeta = 'equipoReclu'
         num = random.randint(1, 100)
         print(num)
         click_elemento(Ajustes, carpeta, 2)
@@ -41,4 +41,3 @@ def equipoReclu():
         print('No paso el equipo de reclutamiento')
         return 'No paso el equipo de reclutamiento'
 
-equipoReclu()
