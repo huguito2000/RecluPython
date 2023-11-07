@@ -1,0 +1,23 @@
+psicometrica1 = '/html/body/app-root/app-dashboard/div/app-crear-vacante/div/div[1]/app-pruebas-video/div[2]/div/form/div/div[2]/div[2]/div/div/label[1]/span'
+psicometrica2 = '/html/body/app-root/app-dashboard/div/app-crear-vacante/div/div[1]/app-pruebas-video/div[2]/div/form/div/div[2]/div[4]/div/div/label[1]/span'
+psicometrica3 = '/html/body/app-root/app-dashboard/div/app-crear-vacante/div/div[1]/app-pruebas-video/div[2]/div/form/div/div[2]/div[6]/div/div/label[1]/span'
+psicometrica4 = '/html/body/app-root/app-dashboard/div/app-crear-vacante/div/div[1]/app-pruebas-video/div[2]/div/form/div/div[2]/div[8]/div/div/label[1]/span'
+psicometrica5 = '/html/body/app-root/app-dashboard/div/app-crear-vacante/div/div[1]/app-pruebas-video/div[2]/div/form/div/div[2]/div[10]/div/div/label[1]/span'
+psicometrica6 = '/html/body/app-root/app-dashboard/div/app-crear-vacante/div/div[1]/app-pruebas-video/div[2]/div/form/div/div[2]/div[12]/div/div/label[1]/span'
+psicometrica7 = '/html/body/app-root/app-dashboard/div/app-crear-vacante/div/div[1]/app-pruebas-video/div[2]/div/form/div/div[2]/div[14]/div/div/label[1]/span'
+psicometrica8 = '/html/body/app-root/app-dashboard/div/app-crear-vacante/div/div[1]/app-pruebas-video/div[2]/div/form/div/div[2]/div[16]/div/div/label[1]/span'
+psicometrica9 = '/html/body/app-root/app-dashboard/div/app-crear-vacante/div/div[1]/app-pruebas-video/div[2]/div/form/div/div[2]/div[18]/div/div/label[1]/span'
+psicometrica10 = '/html/body/app-root/app-dashboard/div/app-crear-vacante/div/div[1]/app-pruebas-video/div[2]/div/form/div/div[2]/div[20]/div/div/label[1]/span'
+psicometrica11 = '/html/body/app-root/app-dashboard/div/app-crear-vacante/div/div[1]/app-pruebas-video/div[2]/div/form/div/div[2]/div[22]/div/div/label[1]/span'
+psicometrica12 = '/html/body/app-root/app-dashboard/div/app-crear-vacante/div/div[1]/app-pruebas-video/div[2]/div/form/div/div[2]/div[24]/div/div/label[1]/span'
+psicometrica13 = '/html/body/app-root/app-dashboard/div/app-crear-vacante/div/div[1]/app-pruebas-video/div[2]/div/form/div/div[2]/div[26]/div/div/label[1]/span'
+
+addpreguntaR1 = '/html/body/app-root/app-dashboard/div/app-crear-vacante/div/div[1]/app-pruebas-video/div[4]/div/div/div[2]/div[1]/p/app-modal-preguntas/button'
+preguntaR1 = '/html/body/ngb-modal-window/div/div/form/div[1]/input'
+guardarR1 = '/html/body/ngb-modal-window/div/div/form/div[2]/button'
+
+addpreguntaR2 = '/html/body/app-root/app-dashboard/div/app-crear-vacante/div/div[1]/app-pruebas-video/div[4]/div/div/div[2]/div[2]/p/app-modal-preguntas/button'
+preguntaR2 = '/html/body/ngb-modal-window/div/div/form/div[1]/input'
+guardarR2 = '/html/body/ngb-modal-window/div/div/form/div[2]/button'
+
+siguiente = '/html/body/app-root/app-dashboard/div/app-crear-vacante/div/div[1]/app-pruebas-video/div[5]/div/div/div[2]/button[2]'
